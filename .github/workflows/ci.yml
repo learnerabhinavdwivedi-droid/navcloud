@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install and build auth-service
+        working-directory: services/auth-service
+        run: |
+          npm ci || npm install
+          npm run build
+      - name: Install and build web app
+        working-directory: apps/web
+        run: |
+          npm ci || npm install
+          npm run build
