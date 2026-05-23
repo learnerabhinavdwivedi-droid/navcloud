@@ -1,0 +1,201 @@
+/* ============================================================================
+   NavCloud Premium — Design System Tokens
+   "Glass-Dark" aesthetic: deep ocean tones, glassmorphism, electric accents
+   ============================================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================================================================
+   CSS Custom Properties (Design Tokens)
+   ============================================================================ */
+:root {
+  /* ---- Primary Palette: Deep Ocean ---- */
+  --nc-primary-50:  hsl(220, 90%, 96%);
+  --nc-primary-100: hsl(220, 85%, 90%);
+  --nc-primary-200: hsl(220, 80%, 80%);
+  --nc-primary-300: hsl(220, 78%, 70%);
+  --nc-primary-400: hsl(220, 76%, 62%);
+  --nc-primary-500: hsl(220, 75%, 55%);
+  --nc-primary-600: hsl(220, 80%, 45%);
+  --nc-primary-700: hsl(220, 85%, 35%);
+  --nc-primary-800: hsl(220, 80%, 22%);
+  --nc-primary-900: hsl(220, 50%, 12%);
+  --nc-primary-950: hsl(220, 55%, 7%);
+
+  /* ---- Accent: Electric Cyan ---- */
+  --nc-accent:       hsl(185, 90%, 55%);
+  --nc-accent-dim:   hsl(185, 70%, 40%);
+  --nc-accent-glow:  hsla(185, 90%, 55%, 0.3);
+  --nc-accent-soft:  hsla(185, 90%, 55%, 0.08);
+
+  /* ---- Semantic Colors ---- */
+  --nc-success:  hsl(155, 75%, 50%);
+  --nc-warning:  hsl(40, 95%, 60%);
+  --nc-danger:   hsl(0, 80%, 60%);
+  --nc-info:     hsl(205, 85%, 60%);
+
+  /* ---- Surface System (Dark Mode) ---- */
+  --nc-bg:         hsl(222, 30%, 5%);
+  --nc-surface-0:  hsl(222, 25%, 7%);
+  --nc-surface-1:  hsl(222, 25%, 10%);
+  --nc-surface-2:  hsl(222, 25%, 14%);
+  --nc-surface-3:  hsl(222, 22%, 18%);
+
+  /* ---- Glass Effect ---- */
+  --nc-glass-bg:          hsla(222, 30%, 10%, 0.65);
+  --nc-glass-bg-solid:    hsl(222, 30%, 10%);
+  --nc-glass-border:      hsla(220, 40%, 30%, 0.2);
+  --nc-glass-border-hover: hsla(185, 60%, 50%, 0.3);
+  --nc-glass-blur:        20px;
+  --nc-glass-shine:       linear-gradient(
+    135deg,
+    hsla(0, 0%, 100%, 0.06) 0%,
+    hsla(0, 0%, 100%, 0.01) 50%,
+    transparent 100%
+  );
+
+  /* ---- Text ---- */
+  --nc-text-primary:   hsl(220, 20%, 95%);
+  --nc-text-secondary: hsl(220, 15%, 65%);
+  --nc-text-muted:     hsl(220, 10%, 45%);
+  --nc-text-inverse:   hsl(220, 30%, 8%);
+
+  /* ---- Typography ---- */
+  --nc-font-display: 'Outfit', system-ui, sans-serif;
+  --nc-font-body:    'Inter', system-ui, sans-serif;
+  --nc-font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  --nc-text-xs:   0.75rem;
+  --nc-text-sm:   0.875rem;
+  --nc-text-base: 1rem;
+  --nc-text-lg:   1.125rem;
+  --nc-text-xl:   1.25rem;
+  --nc-text-2xl:  1.5rem;
+  --nc-text-3xl:  1.875rem;
+  --nc-text-4xl:  2.25rem;
+  --nc-text-5xl:  3rem;
+  --nc-text-6xl:  3.75rem;
+
+  /* ---- Spacing ---- */
+  --nc-space-1:  0.25rem;
+  --nc-space-2:  0.5rem;
+  --nc-space-3:  0.75rem;
+  --nc-space-4:  1rem;
+  --nc-space-5:  1.25rem;
+  --nc-space-6:  1.5rem;
+  --nc-space-8:  2rem;
+  --nc-space-10: 2.5rem;
+  --nc-space-12: 3rem;
+  --nc-space-16: 4rem;
+  --nc-space-20: 5rem;
+
+  /* ---- Radii ---- */
+  --nc-radius-xs:   4px;
+  --nc-radius-sm:   8px;
+  --nc-radius-md:   14px;
+  --nc-radius-lg:   22px;
+  --nc-radius-xl:   32px;
+  --nc-radius-pill: 100px;
+  --nc-radius-full: 50%;
+
+  /* ---- Shadows ---- */
+  --nc-shadow-sm:   0 2px 8px hsla(0, 0%, 0%, 0.15);
+  --nc-shadow-md:   0 4px 16px hsla(0, 0%, 0%, 0.25);
+  --nc-shadow-lg:   0 8px 32px hsla(0, 0%, 0%, 0.35);
+  --nc-shadow-xl:   0 16px 64px hsla(0, 0%, 0%, 0.45);
+  --nc-shadow-glow: 0 0 40px var(--nc-accent-glow);
+  --nc-shadow-inner: inset 0 2px 4px hsla(0, 0%, 0%, 0.2);
+
+  /* ---- Transitions ---- */
+  --nc-transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --nc-transition-base:   250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --nc-transition-slow:   400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --nc-transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---- Z-Index Scale ---- */
+  --nc-z-base:    1;
+  --nc-z-sticky:  100;
+  --nc-z-overlay: 200;
+  --nc-z-modal:   300;
+  --nc-z-toast:   400;
+}
+
+/* ============================================================================
+   Global Reset + Base Styles
+   ============================================================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--nc-font-body);
+  background: var(--nc-bg);
+  color: var(--nc-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Animated background mesh */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%, hsla(220, 80%, 25%, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 80%, hsla(185, 80%, 30%, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, hsla(260, 60%, 20%, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: var(--nc-accent);
+  text-decoration: none;
+  transition: color var(--nc-transition-fast);
+}
+a:hover {
+  color: var(--nc-primary-300);
+}
+
+::selection {
+  background: hsla(185, 90%, 55%, 0.25);
+  color: var(--nc-text-primary);
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--nc-accent);
+  outline-offset: 2px;
+  border-radius: var(--nc-radius-xs);
+}
+
+/* ============================================================================
+   Scrollbar Styling
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(220, 20%, 30%, 0.5);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(220, 20%, 40%, 0.7);
+}

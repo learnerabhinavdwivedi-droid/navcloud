@@ -1,0 +1,105 @@
+/* NavCloud Premium — Global Styles */
+@import './design-system/tokens.css';
+
+/* ============================================================================
+   Layout Utilities
+   ============================================================================ */
+
+.nc-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--nc-space-6);
+}
+
+.nc-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.nc-row {
+  display: flex;
+  align-items: center;
+}
+
+.nc-grid {
+  display: grid;
+  gap: var(--nc-space-4);
+}
+
+.nc-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================================
+   Animations
+   ============================================================================ */
+
+@keyframes nc-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nc-slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nc-scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes nc-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes nc-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes nc-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nc-animate-fade-in {
+  animation: nc-fade-in 0.4s ease-out forwards;
+}
+
+.nc-animate-slide-up {
+  animation: nc-slide-up 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ============================================================================
+   Typography Utilities
+   ============================================================================ */
+
+.nc-heading {
+  font-family: var(--nc-font-display);
+  font-weight: 700;
+  color: var(--nc-text-primary);
+  line-height: 1.2;
+}
+
+.nc-subheading {
+  font-family: var(--nc-font-body);
+  font-weight: 400;
+  color: var(--nc-text-secondary);
+  line-height: 1.5;
+}
+
+.nc-gradient-text {
+  background: linear-gradient(135deg, var(--nc-accent), var(--nc-primary-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nc-mono {
+  font-family: var(--nc-font-mono);
+}
