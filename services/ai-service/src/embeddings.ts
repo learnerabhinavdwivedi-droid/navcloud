@@ -18,7 +18,7 @@ export const EmbeddingConfigSchema = z.object({
   model: z.string().default(GEMINI_EMBEDDING_MODEL),
   dimensions: z.number().int().positive().default(GEMINI_EMBEDDING_DIMENSIONS),
 });
-export type EmbeddingConfig = z.infer<typeof EmbeddingConfigSchema>;
+export type EmbeddingConfig = z.input<typeof EmbeddingConfigSchema>;
 
 // ============================================================================
 // Types
@@ -127,7 +127,7 @@ export class GeminiEmbeddingClient {
 
     let totalTokens = 0;
     const embeddings: EmbeddingResult[] = data.embeddings.map((emb, idx) => {
-      const tokenCount = texts[idx].length;
+      const tokenCount = texts[idx]?.length ?? 0;
       totalTokens += tokenCount;
       return {
         embedding: emb.values,

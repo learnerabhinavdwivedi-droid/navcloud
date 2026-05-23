@@ -17,7 +17,7 @@ export const SummarizerConfigSchema = z.object({
   apiKey: z.string().min(1),
   model: z.string().default(GEMINI_FLASH_MODEL),
 });
-export type SummarizerConfig = z.infer<typeof SummarizerConfigSchema>;
+export type SummarizerConfig = z.input<typeof SummarizerConfigSchema>;
 
 // ============================================================================
 // Types

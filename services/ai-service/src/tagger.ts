@@ -18,7 +18,7 @@ export const TaggerConfigSchema = z.object({
   model: z.string().default(GEMINI_FLASH_MODEL),
   maxTagCount: z.number().int().positive().default(5),
 });
-export type TaggerConfig = z.infer<typeof TaggerConfigSchema>;
+export type TaggerConfig = z.input<typeof TaggerConfigSchema>;
 
 // ============================================================================
 // Types
